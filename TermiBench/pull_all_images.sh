@@ -1,0 +1,40 @@
+#!/bin/bash
+
+images=(
+  "anonymoustermibench/termibench:cve-"
+  "anonymoustermibench/termibench:cve-"
+  "anonymoustermibench/termibench:cve-2015-8562"
+  "mysql:5.5"
+  "anonymoustermibench/termibench:cve-"
+  "anonymoustermibench/termibench:cve-"
+  "anonymoustermibench/termibench:cve-"
+  "anonymoustermibench/termibench:cve-"
+  "anonymoustermibench/termibench:cve-"
+  "anonymoustermibench/termibench:cve-"
+  "anonymoustermibench/termibench:cve-"
+  "anonymoustermibench/termibench:cve-"
+  "anonymoustermibench/termibench:cve-"
+  "anonymoustermibench/termibench:cve-"
+  "anonymoustermibench/termibench:cve-"
+  "anonymoustermibench/termibench:cve-"
+  "anonymoustermibench/termibench:cve-"
+  "anonymoustermibench/termibench:cve-"
+  "anonymoustermibench/termibench:cve-"
+  "anonymoustermibench/termibench:cve-"
+  "anonymoustermibench/termibench:cve-"
+  "anonymoustermibench/termibench:cve-"
+  "anonymoustermibench/termibench:cve-"
+  "anonymoustermibench/termibench:cve-"
+  "anonymoustermibench/termibench:cve-"
+  "anonymoustermibench/termibench:cve-"
+  "anonymoustermibench/termibench:cve-"
+  "anonymoustermibench/termibench:cve-"
+  "anonymoustermibench/termibench:cve-"
+  "anonymoustermibench/termibench:cve-"
+  "anonymoustermibench/termibench:cve-"
+)
+
+for img in "${images[@]}"; do
+  echo "Pulling $img ..."
+  docker pull "$img"
+done

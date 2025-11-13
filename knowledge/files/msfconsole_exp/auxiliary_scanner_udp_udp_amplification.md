@@ -1,0 +1,32 @@
+**The description of current metasploit exploit**
+Detect UDP endpoints with UDP amplification vulnerabilities
+
+---
+
+**The usage instruction:**
+
+Start by loading the module:
+
+```bash
+use auxiliary/scanner/udp/udp_amplification
+```
+
+Then set the required options:
+
+```bash
+# Required parameters with no default value
+set PORTS <your Ports to probe here>
+set RHOSTS <your The target host(s) here>
+```
+
+If the defaults match your setup, you do **not** need to change them. Otherwise, override them using `set`.
+
+Finally, run the exploit:
+
+```bash
+exploit
+```
+Note:
+1. Please execute the command step by step.
+2. You can change default value if need.
+3. You need to pay attention to whether the default RPORT is consistent with the port where the current service is running.

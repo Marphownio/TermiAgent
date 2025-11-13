@@ -38,11 +38,11 @@ cd TermiAgent
 pip install -r requirements.txt
 ```
 
-**Step 2. Prepare Execute Environment for TermiAgent** (unfinish)
+**Step 2. Prepare Execute Environment for TermiAgent**
 
-Use the following command to prepare the execute environment for TermiAgent, since its execution requires both the Kali platform and *the Arsenal Module*, which are conveniently deployed via Docker. For a complete open-sourced list of exploits from *the Arsenal Module* please click [Here]().
+Use the following command to prepare the execute environment for TermiAgent, since its execution requires both the Kali platform and *the Arsenal Module*, which are conveniently deployed via Docker. For a complete open-sourced list of exploits from *the Arsenal Module* please click [Here](#arsenal_list).
+
 ```bash
-# 在这个命令下载 kali以及所有的 cve-exp
 bash ./utils/deploy_execute_environment.sh
 ```
 
@@ -60,15 +60,15 @@ docker network create \
 ```
 You can replace the Docker network name, subnet range and gateway as needed.
 
-Then use following command to deploy a target host from TermiBench, with a vulnerable service xxx(CVE-20xx-xx) and 5 other benign services. For a detailed instruction on the usage of TermiBench and complete list of vulnerable targets, please refer to [TermiBench Instruction](TermiBench/README.md).
+Then use following command to deploy a target host from TermiBench, with a vulnerable service Apache CouchDB (CVE-2022-24706) and 5 other benign services. For a detailed instruction on the usage of TermiBench and complete list of vulnerable targets, please refer to [TermiBench Instruction](TermiBench/README.md).
 ```bash
 # 1. download the target image from Docker Hub
-docker pull anonymoustermibench/termibench:cve-2015-1427
+docker pull anonymoustermibench/termibench:cve-2022-24706
 
 # 2. start the target
-cd ./TermiBench/CVE-2015-1427
+cd ./TermiBench/CVE-2022-24706
 
-bash start.sh cve-2015-1427 termibench-container 172.16.0.99 ./7A1/supervisord_1.conf ./monitor_shell_by_ip.py 172.16.1.0 9000 172.16.1.4 pennet01 ./monitor.txt
+bash start.sh cve-2022-24706 termibench-container 172.16.0.99 ./5A1/supervisord_1.conf ./monitor_shell_by_ip.py 172.16.1.0 9000 172.16.1.4 pennet01 ./monitor.txt
 ```
 > Please replace <Your Local IP> with the IP of your local host.
 
@@ -155,9 +155,6 @@ docker_network:
 2. Typically, the Docker containers for the exploits in the Arsenal Module are deployed in the range `xx.xx.1.10–xx.xx.1.20`, the Kali Docker is deployed at `xx.xx.1.4`, and the target machine is deployed at `xx.xx.0.99`. You can modify these IPs as needed.
 
 
-
-
-
 ## 🔗 Run TermiAgent
 
 To start a penetration testing by TermiBench, you can use the command with following parameters.
@@ -191,7 +188,26 @@ The Arsenal Module is a framework that transforms heterogeneous "in-the-wild" ex
 - The source code of Arsenal Module remains closed, as exposing it could substantially increase the risk of the system being misused to create or distribute ready-to-use exploits.
 - Only a limited, carefully curated subset of the ready-to-use exploits—Metasploit integration and a few “in-the-wild” exploits tied to CVEs from TermiBench—is released to facilitate reproducibility and safe research while minimizing real-world risk.
 
-The list of xxxx “in-the-wild” exploits that are released can be found [here](static/in-the-wild-exploits.json)
+Here is the list of 15 “in-the-wild” exploits that we have released.
+<dev id="arsenal_list"></dev>
+| Index |  CVE ID | Exploit Type |Docker Image Name |
+| :-----:| :----: | :----: |  :----: |
+|1| CVE-2015-1427 | Package-Based | - |
+|2| CVE-2015-3306 | Script-Based | `anonymoustermibench/exploit:cve-2015-3306`|
+|3| CVE-2016-5734 |  Script-Based |`anonymoustermibench/exploit:cve-2016-5734`|
+|4| CVE-2018-20062 | Package-Based | - |
+|5| CVE-2018-7600 | Package-Based | - |
+|6| CVE-2021-25646 | Package-Based | - |
+|7| CVE-2021-41773 | Script-Based | `anonymoustermibench/exploit:cve-2021-41773` |
+|8| CVE-2021-42013 | Script-Based | `anonymoustermibench/exploit:cve-2021-42013` |
+|9| CVE-2022-0543  | Script-Based | `anonymoustermibench/exploit:cve-2022-0543`|
+|10| CVE-2022-24706 | Script-Based | `anonymoustermibench/exploit:cve-2022-24706` |
+|11| CVE-2022-41678 | Script-Based | `anonymoustermibench/exploit:cve-2022-41678`|
+|12| CVE-2024-27348 | Package-Based | - |
+|13| CVE-2024-36401 |Package-Based| - |
+|14| CVE-2025-32433  | Script-Based | `anonymoustermibench/exploit:cve-2025-32433` |
+|15| CVE-2025-3248  | Script-Based | `anonymoustermibench/exploit:cve-2025-3248` | 
+
 
 ## 📚 Add External Knowledge
 
@@ -224,9 +240,9 @@ Note:
 │   ├── executor.py
 ├── knowledge                          ## TermiAgent: Interface for Arsenal Module
 │   ├── files                          ## Directory for open-sourced exploits
-│       ├── in_the_wild_exp            ## Usage Manuals for "in-the-wild" exploits
-│       ├── msfconsole_exp             ## Usage Manuals for Metasploit exploits
-│       └── path_traversal.md          ## Additional knowledge base
+│   │   ├── in_the_wild_exp            ## Usage Manuals for "in-the-wild" exploits
+│   │   ├── msfconsole_exp             ## Usage Manuals for Metasploit exploits
+│   │   └── path_traversal.md          ## Additional knowledge base
 │   ├── knowledge.py
 │   └── template.py
 ├── log                                ## TermiAgent: Path to store log files

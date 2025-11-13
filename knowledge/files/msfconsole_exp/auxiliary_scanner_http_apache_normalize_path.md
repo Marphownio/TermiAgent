@@ -1,0 +1,38 @@
+**The description of current metasploit exploit**
+This module scans for an unauthenticated RCE vulnerability which exists in Apache version 2.4.49 (CVE-2021-41773).          If files outside of the document root are not protected by 'require all denied' and CGI has been explicitly enabled,          it can be used to execute arbitrary commands (Remote Command Execution).          This vulnerability has been reintroduced in Apache 2.4.50 fix (CVE-2021-42013).
+
+---
+
+**The usage instruction:**
+
+Start by loading the module:
+
+```bash
+use auxiliary/scanner/http/apache_normalize_path
+```
+
+Then set the required options:
+
+```bash
+# Required parameters with no default value
+set RHOSTS <your target host(s) here>
+# Repeat for each required parameter from Step 1
+```
+
+Carefully review the following network-related parameters. These have default values but **may need to be changed** depending on your environment:
+
+* RPORT – default: 443 - The target port (TCP)
+
+<!-- Repeat for each parameter from Step 2 -->
+
+If the defaults match your setup, you do **not** need to change them. Otherwise, override them using `set`.
+
+Finally, run the exploit:
+
+```bash
+exploit
+```
+Note:
+1. Please execute the command step by step.
+2. You can change default value if need.
+3. You need to pay attention to whether the default RPORT is consistent with the port where the current service is running.

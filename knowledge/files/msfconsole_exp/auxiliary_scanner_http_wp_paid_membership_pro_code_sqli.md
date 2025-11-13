@@ -1,0 +1,36 @@
+**The description of current metasploit exploit**
+Paid Membership Pro, a WordPress plugin,          prior to 2.9.8 is affected by an unauthenticated SQL injection via the          `code` parameter.          Remote attackers can exploit this vulnerability to dump usernames and password hashes          from the `wp_users` table of the affected WordPress installation. These password hashes          can then be cracked offline using tools such as Hashcat to obtain valid login          credentials for the affected WordPress installation.
+
+---
+
+**The usage instruction:**
+
+Start by loading the module:
+
+```bash
+use auxiliary/scanner/http/wp_paid_membership_pro_code_sqli
+```
+
+Then set the required options:
+
+```bash
+# Required parameters with no default value
+set RHOSTS <your target host(s) here>
+# Repeat for each required parameter from Step 1
+```
+
+Carefully review the following network-related parameters. These have default values but **may need to be changed** depending on your environment:
+
+* RPORT – default: 80 - The target port (TCP)
+
+If the defaults match your setup, you do **not** need to change them. Otherwise, override them using `set`.
+
+Finally, run the exploit:
+
+```bash
+exploit
+```
+Note:
+1. Please execute the command step by step.
+2. You can change default value if need.
+3. You need to pay attention to whether the default RPORT is consistent with the port where the current service is running.

@@ -1,0 +1,27 @@
+# Please do not modify this item
+kali_config:
+  kali_image_name: "anonymoustermibench/kali"
+
+# You can set the api of LLMs here
+llm_config:
+  <LLM_TAG_1>:
+    api_key: "<API_KEY_1>"
+    base_url: "<BASE_URL_1>"
+    model: "<MODEL_NAME_1>"
+    temperature: <TEMPERATURE_1>
+  <LLM_TAG_2>:
+    api_key: "<API_KEY_2>"
+    base_url: "<BASE_URL_2>"
+    model: "<MODEL_NAME_2>"
+    temperature: <TEMPERATURE_2>
+
+
+
+# You can set docker netwrok here
+docker_network:
+  <DOCKER_NETWORK_NAME_1>:
+    attacker_ip: <ATTACKER_IP_1>
+    exp_ip_range: <ATTACKER_IP_1> 
+  <DOCKER_NETWORK_NAME_2>:
+    attacker_ip: <ATTACKER_IP_2>
+    exp_ip_range: <ATTACKER_IP_2>  
