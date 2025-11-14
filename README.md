@@ -188,25 +188,25 @@ The Arsenal Module is a framework that transforms heterogeneous "in-the-wild" ex
 - The source code of Arsenal Module remains closed, as exposing it could substantially increase the risk of the system being misused to create or distribute ready-to-use exploits.
 - Only a limited, carefully curated subset of the ready-to-use exploits—Metasploit integration and a few “in-the-wild” exploits tied to CVEs from TermiBench—is released to facilitate reproducibility and safe research while minimizing real-world risk.
 
-Here is the list of 15 “in-the-wild” exploits that we have released.
+Here is the CVE ID list of 15 “in-the-wild” exploits that we have released. You can find all the corresponding usage manual in [./knowledge/files/in_the_wild_exp](./knowledge/files/in_the_wild_exp).
 <dev id="arsenal_list"></dev>
-| Index |  CVE ID | Exploit Type |Docker Image Name |
-| :-----:| :----: | :----: |  :----: |
-|1| CVE-2015-1427 | Package-Based | - |
-|2| CVE-2015-3306 | Script-Based | `anonymoustermibench/exploit:cve-2015-3306`|
-|3| CVE-2016-5734 |  Script-Based |`anonymoustermibench/exploit:cve-2016-5734`|
-|4| CVE-2018-20062 | Package-Based | - |
-|5| CVE-2018-7600 | Package-Based | - |
-|6| CVE-2021-25646 | Package-Based | - |
-|7| CVE-2021-41773 | Script-Based | `anonymoustermibench/exploit:cve-2021-41773` |
-|8| CVE-2021-42013 | Script-Based | `anonymoustermibench/exploit:cve-2021-42013` |
-|9| CVE-2022-0543  | Script-Based | `anonymoustermibench/exploit:cve-2022-0543`|
-|10| CVE-2022-24706 | Script-Based | `anonymoustermibench/exploit:cve-2022-24706` |
-|11| CVE-2022-41678 | Script-Based | `anonymoustermibench/exploit:cve-2022-41678`|
-|12| CVE-2024-27348 | Package-Based | - |
-|13| CVE-2024-36401 |Package-Based| - |
-|14| CVE-2025-32433  | Script-Based | `anonymoustermibench/exploit:cve-2025-32433` |
-|15| CVE-2025-3248  | Script-Based | `anonymoustermibench/exploit:cve-2025-3248` | 
+| Index |  CVE ID |  
+| :-----:| :----: | 
+|1| CVE-2015-1427 |  
+|2| CVE-2015-3306 |   
+|3| CVE-2016-5734 |    
+|4| CVE-2018-20062 |   
+|5| CVE-2018-7600 |   
+|6| CVE-2021-25646 |  
+|7| CVE-2021-41773 |  
+|8| CVE-2021-42013 |  
+|9| CVE-2022-0543  |  
+|10| CVE-2022-24706 |  
+|11| CVE-2022-41678 |   
+|12| CVE-2024-27348 |   
+|13| CVE-2024-36401 |  
+|14| CVE-2025-32433  |  
+|15| CVE-2025-3248  |  
 
 
 ## 📚 Add External Knowledge
