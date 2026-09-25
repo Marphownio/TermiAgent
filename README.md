@@ -209,6 +209,25 @@ Here is the CVE ID list of 15 “in-the-wild” exploits that we have released. 
 |15| CVE-2025-3248  |  
 
 
+Following table describes the Unified Exploit Descriptor (UED) dimensions used for the Arsenal Module , organized into environmental and operational categories
+
+| Category | Dimension | Description |
+| --- | --- | --- |
+| Environmental | Language | Primary programming language of the exploit (e.g., Python, C, Go). |
+| Environmental | Language version | Recommended language version ensuring compatibility (e.g., Python 3.9 vs. 2.7). |
+| Environmental | Base image | Lightweight Docker base image aligned with language/runtime (e.g., `python:3.9-slim`). |
+| Environmental | System dependencies | OS-level packages to be installed via package manager (e.g., `nmap`, `build-essential`). |
+| Environmental | Code dependencies | Language-specific libraries installed via package manager (e.g., `requests`, `pwntools`). |
+| Environmental | Main script | Path, executor, and metadata of the primary exploit script. Serves as container entrypoint. |
+| Environmental | Parameter files | External files (payloads, configs, URL lists) required by the exploit. |
+| Environmental | Docker config | Workdir, entrypoint, and command defaults for reproducible containerization. |
+| Operational | Setup steps | Environment and target setup before exploitation (e.g., listener, service connection). |
+| Operational | Exploit steps | Ordered attack operations that form the core exploitation process (e.g., run script, send payload). |
+| Operational | Parameters | Command-line arguments with placeholders, descriptions, and defaults. |
+| Operational | Usage example | Example usage from repository documentation (e.g., README) or source code. |
+
+
+
 ## 📚 Add External Knowledge
 
 TermiAgent allows users to incorporate custom knowledge bases to further enhance its penetration testing capabilities according to specific needs. External knowledge bases can be organized by topic and stored as Markdown documents under the directory at [knowledge/files](knowledge/files) using the following format.
